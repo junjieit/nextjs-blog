@@ -1,0 +1,11 @@
+{
+  "icon": 24,
+  "dimensions": false,
+  "ref": true,
+  "replaceAttrValues": {
+    "fill": "currentColor"
+  },
+  "svgProps": {
+    "fill": "currentColor"
+  }
+}

@@ -1,17 +1,24 @@
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "./page.module.css";
-import Link from "next/link";
-import { getSortedPostsData } from "@/lib/posts";
-import { formatDate } from "@/utils/date";
-import Header from "@/components/Header";
+import Image from 'next/image'
+import { Inter } from '@next/font/google'
+import styles from './page.module.css'
+import Link from 'next/link'
+import { getSortedPostsData } from '@/lib/posts'
+import { formatDate } from '@/utils/date'
+import Header from '@/components/Header'
 
 // export const revalidate = 60;
 
-const inter = Inter({ subsets: ["latin"] });
+interface Props {
+  params: {
+    id: string
+  }
+}
 
-export default async function Home() {
-  const articleList = getSortedPostsData();
+export default async function Home({ params }: Props) {
+  const { id } = params
+  const articleList = getSortedPostsData({
+    category: id,
+  })
   return (
     <div>
       <Header mainStyles={styles.main} />
@@ -25,7 +32,7 @@ export default async function Home() {
                     {item.year}
                   </div>
                 ) : (
-                  ""
+                  ''
                 )}
                 <div className="mt-4 flex justify-between items-center">
                   <Link
@@ -45,5 +52,5 @@ export default async function Home() {
         </div>
       </main>
     </div>
-  );
+  )
 }

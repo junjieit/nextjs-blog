@@ -1,0 +1,10 @@
+.renderWrapper {
+  flex: 1;
+  padding-bottom: 40px;
+}
+.renderWrapper :global(.vditor-yml-front-matter) {
+  display: none;
+}
+.renderWrapper :global(a) {
+  color: #3eaf7c;
+}
