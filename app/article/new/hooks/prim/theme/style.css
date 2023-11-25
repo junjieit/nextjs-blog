@@ -1,0 +1,144 @@
+.milkdown .editor {
+  outline: 0;
+  padding: 1em;
+  @apply border-solid border border-slate-200 rounded-md;
+}
+.milkdown .editor h1 {
+  line-height: 1.35;
+  margin-top: 0;
+  padding: 0.3em;
+  font-size: 2.4em;
+  border-bottom: 2px double #eee;
+  font-weight: 700;
+}
+
+.milkdown .editor > h2:first-child {
+  margin-top: 0;
+}
+
+.milkdown .editor h2 {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  line-height: 1.35;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.milkdown .editor h3 {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  line-height: 1.35;
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.milkdown .editor h4 {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  line-height: 1.35;
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+.milkdown .editor h5,
+.milkdown .editor h6 {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  line-height: 1.35;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.milkdown .editor ul {
+  margin-left: 1.3em;
+}
+.milkdown .editor ul li {
+  list-style: disc;
+}
+
+.milkdown .editor ol {
+  margin-left: 1.9em;
+}
+.milkdown .editor ol li {
+  list-style: decimal;
+}
+
+.milkdown .editor thead th {
+  border: 1px solid #ddd;
+  padding: 0.5em 1em;
+  color: #666;
+}
+.milkdown .editor table caption {
+  border-bottom: none;
+}
+.milkdown .editor table td {
+  border: 1px solid #ddd;
+  padding: 0.5em 1em;
+  color: #666;
+}
+
+.milkdown .editor img {
+  max-width: 100%;
+}
+
+.milkdown .editor address,
+.milkdown .editor caption,
+.milkdown .editor cite,
+.milkdown .editor code,
+.milkdown .editor dfn,
+.milkdown .editor th,
+.milkdown .editor var {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.milkdown .editor em {
+  font-family: Georgia-Italic, STSongti-SC-Light, serif;
+  font-weight: inherit;
+  font-style: inherit;
+}
+.milkdown .editor strong em,
+.milkdown .editor em strong {
+  font-family: Georgia-BoldItalic, STSongti-SC-Regular, serif;
+}
+.milkdown .editor strong {
+  font-weight: bolder;
+  color: #000;
+}
+
+.milkdown .editor a {
+  color: rgb(26, 188, 156);
+  cursor: pointer;
+}
+.milkdown .editor a + a {
+  margin-left: 3em;
+}
+.milkdown .editor a:hover {
+  color: rgba(26, 188, 156, 0.9);
+  text-decoration: underline;
+}
+
+.milkdown .editor mark {
+  background: #fffdd1;
+  border-bottom: 1px solid #ffedce;
+  padding: 2px;
+  margin: 0 5px;
+}
+
+.milkdown .editor code {
+  color: #ee7c2b;
+}
+.milkdown .editor pre {
+  display: block;
+  margin: 0.5em 0;
+  overflow-x: auto;
+  background-color: #1f2937;
+  color: #c0c5ce;
+  padding: 0.5em;
+  @apply rounded-md;
+}
+.milkdown .editor pre code,
+.milkdown .editor pre tt {
+  color: #c0c5ce;
+  font-family: Courier, 'Courier New', monospace;
+}

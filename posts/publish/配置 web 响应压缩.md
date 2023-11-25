@@ -132,7 +132,7 @@ http {
 
 反向代理不需要压缩，设置响应头
 
-```
+```Nginx
 server {
     ...
     location / {

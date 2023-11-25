@@ -9,10 +9,10 @@ interface Props {
 
 export default async function ArticleEdit({ params }: Props) {
   const { id } = params
-  const markdown = await getArticleDetail(decodeURI(id))
+  const matterArticle = await getArticleDetail(decodeURI(id))
   return (
     <div>
-      <ArticleEditor />
+      <ArticleEditor matterArticle={matterArticle} />
     </div>
   )
 }

@@ -1,16 +1,38 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { useInitEditor } from "./hooks/useInitEditor";
-import useOperateArticle from "./hooks/useOperateArticle";
+import { useEffect, useState } from 'react'
+import { Milkdown, MilkdownProvider } from '@milkdown/react'
+import { useInitEditor } from './hooks/prim/useInitEditor'
+import type { MatterArticle } from '@/lib/posts'
 
-export default function ArticleEditor() {
-  const [title, setTitle] = useState("");
-  const { editorRef, editor } = useInitEditor();
-  const { saveDraft, savePublish } = useOperateArticle({
-    title,
-    editor,
-  });
+const MilkdownEditor = ({ defaultValue }: { defaultValue?: string }) => {
+  useInitEditor({
+    defaultValue,
+  })
+
+  return <Milkdown />
+}
+
+export default function ArticleEditor({
+  matterArticle,
+}: {
+  matterArticle?: MatterArticle
+}) {
+  const [title, setTitle] = useState('')
+  const [category, setCategory] = useState('')
+  // const { editorRef, editor } = useInitEditor({
+  //   markdown,
+  // })
+  // const { saveDraft, savePublish } = useOperateArticle({
+  //   title,
+  //   editor,
+  //   category,
+  // })
+  const [showChild, setShowChild] = useState(false)
+
+  useEffect(() => {
+    setShowChild(true)
+  }, [])
 
   return (
     <div className="flex flex-col w-screen h-screen p-8">
@@ -21,19 +43,31 @@ export default function ArticleEditor() {
             value={title}
             onChange={(evt) => setTitle(evt.target.value)}
           />
+          <input
+            className="input-default"
+            value={category}
+            onChange={(evt) => setCategory(evt.target.value)}
+          />
         </div>
-        <div className="ml-4">
+        {/* <div className="ml-4">
           <button className="btn-secondary mr-4" onClick={savePublish}>
             发布
           </button>
           <button className="btn-primary w-28" onClick={saveDraft}>
             保存
           </button>
-        </div>
+        </div> */}
       </div>
       <div className="h-full w-full">
-        <div ref={editorRef}></div>
+        {/* <div ref={editorRef}></div> */}
+        <MilkdownProvider>
+          {showChild ? (
+            <MilkdownEditor defaultValue={matterArticle?.content} />
+          ) : (
+            ''
+          )}
+        </MilkdownProvider>
       </div>
     </div>
-  );
+  )
 }
